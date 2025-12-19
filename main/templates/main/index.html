@@ -81,12 +81,12 @@
     <div class="content-slider">
 
       {% for country in countries %}
-      <input type="radio" id="banner{{ forloop.counter }}" class="sec-1-input" name="banner" {% if forloop.first%}checked{% endif %}>
+      <input type="radio" id="banner{{ country.id }}" class="sec-1-input" name="banner" {% if country.id %}checked{% endif %}>
       {% endfor %}
 
       <div class="slider">
         {% for country in countries %}
-        <div id="top-banner-{{ forloop.counter }}" class="banner">
+        <div id="top-banner-{{ country.id }}" class="banner">
           <div class="banner-inner-wrapper header-text">
             <div class="main-caption">
               <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
@@ -128,9 +128,9 @@
       <nav>
         <div class="controls">
           {% for country in countries %}
-          <label for="banner{{ forloop.counter }}">
+          <label for="banner{{ country.id }}">
             <span class="progressbar"><span class="progressbar-fill"></span></span>
-            <span class="text">{{ forloop.counter }}</span>
+            <span class="text">{{ country.id }}</span>
           </label>
           {% endfor %}
         </div>
